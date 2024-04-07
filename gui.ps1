@@ -5,7 +5,9 @@
     $F.Text = [Settings]::Title
     $F.Size = [Size]::new([Settings]::WindowSize, [Settings]::WindowSize)
     $F.BackColor = [Color]::Black
-    $F.Icon = "assets\icon.ico"
+    $F.FormBorderStyle = "FixedSingle"
+    $F.MaximizeBox = $false
+    $F.Icon = [Icon]::new("assets\shrok.ico")
 
     return $F
 }

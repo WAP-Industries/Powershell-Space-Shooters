@@ -27,7 +27,7 @@ $Window.Add_KeyUp({
     param($_, $e)
     
     if ($e.KeyCode -eq "Space"){
-        $Projectiles.Add(
+        return $Projectiles.Add(
             [Sprite]::new(
                 "projectile.png",
                 $Player.X+$Player.Element.Width,
@@ -36,8 +36,6 @@ $Window.Add_KeyUp({
                 [Settings]::ProjectileSpeed
             )
         )
-
-        return    
     }
     KeyEvent $e $true
 })

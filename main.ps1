@@ -45,7 +45,7 @@ $GameLoop.Add_Tick({
             if (($A -join ',' -eq $Sprites -join ',') -and $A[$i].GetCollision($Player)){
                 $Player.Dispose()
                 $GameLoop.Stop()
-                Start-Sleep 2
+                Start-Sleep 1
                 return End
             }
 
