@@ -1,5 +1,5 @@
 class Settings{
-    static [String] $Title = "Space Shooters";
+    static [String] $Title = "Shokam Shooters";
     static [Int] $WindowSize = 600
 
     static [Int] $EntitySize = 60
