@@ -13,6 +13,7 @@ class Sprite{
             
             [PictureBox] $P = [PictureBox]::new()
             $P.Image = [Settings]::Assets[$Src]
+            $P.BackColor = [Color]::Transparent
             $P.Size = [Size]::new($Width, $Width)
             $P.SizeMode = "StretchImage"
             $P.Location = [Point]::new($global:Window.Width, 0)
