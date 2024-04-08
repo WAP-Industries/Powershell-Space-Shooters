@@ -1,4 +1,4 @@
-$Settings = [PSCustomObject]@{
+[PSCustomObject] $Settings = @{
     Title = "Shokam Shooters"
     WindowSize = 600
     
