@@ -2,8 +2,8 @@
     [OutputType([Form])]
 
     [Form] $F = [Form]::new()
-    $F.Text = [Settings]::Title
-    $F.Size = [Size]::new([Settings]::WindowSize, [Settings]::WindowSize)
+    $F.Text = $Settings.Title
+    $F.Size = [Size]::new($Settings.WindowSize, $Settings.WindowSize)
     $F.BackColor = [Color]::Black
     $F.FormBorderStyle = "FixedSingle"
     $F.MaximizeBox = $false
@@ -14,7 +14,7 @@
 
 
 [Timer] $GameLoop = CreateTimer 10
-[Timer] $SpawnTimer = CreateTimer ([Settings]::SpawnRate)
+[Timer] $SpawnTimer = CreateTimer ($Settings.SpawnRate)
 
 
 [Label] $Score = & {

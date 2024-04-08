@@ -4,15 +4,15 @@ class Sprite{
     [Int] $Speed
 
     Sprite([String] $Src, [Int] $X, [Int] $Y, [Int] $Width, [Int] $Speed){
-        if (![Settings]::Assets.ContainsKey($Src)){
-            [Settings]::Assets.Add($Src, [Image]::FromFile("assets\$Src"))
+        if (!$global:Settings.Assets.ContainsKey($Src)){
+            $global:Settings.Assets.Add($Src, [Image]::FromFile("assets\$Src"))
         }
 
         $this.Element = & {
             [OutputType([PictureBox])]
             
             [PictureBox] $P = [PictureBox]::new()
-            $P.Image = [Settings]::Assets[$Src]
+            $P.Image = $global:Settings.Assets[$Src]
             $P.BackColor = [Color]::Transparent
             $P.Size = [Size]::new($Width, $Width)
             $P.SizeMode = "StretchImage"
@@ -61,4 +61,4 @@ class Sprite{
 [ArrayList] $Sprites = @()
 [ArrayList] $Projectiles = @()
 
-[Sprite] $Player = [Sprite]::new("player.png", 100, $Window.Height/2, [Settings]::EntitySize, 0)
+[Sprite] $Player = [Sprite]::new("player.png", 100, $Window.Height/2, $Settings.EntitySize, 0)

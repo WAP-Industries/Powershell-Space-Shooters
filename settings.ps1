@@ -1,14 +1,14 @@
-class Settings{
-    static [String] $Title = "Shokam Shooters"
-    static [Int] $WindowSize = 600
+$Settings = [PSCustomObject]@{
+    Title = "Shokam Shooters"
+    WindowSize = 600
+    
+    EntitySize = 60
+    EntitySpeed = 5
+    SpawnRate = 500
+    ProjectileWidth = 20
+    ProjectileSpeed = 10
 
-    static [Int] $EntitySize = 60
-    static [Int] $EntitySpeed = 5
-    static [Int] $SpawnRate = 500
-    static [int] $ProjectileWidth = 20
-    static [Int] $ProjectileSpeed = 10
+    Assets = @{}
 
-    static [HashTable] $Assets = @{}
-
-    static [Int] $Score = 0
+    Score = 0
 }

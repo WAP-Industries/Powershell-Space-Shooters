@@ -31,7 +31,7 @@ function End(){
 
 
 $GameLoop.Add_Tick({
-    $Score.Text = "Score: $([Settings]::Score)"
+    $Score.Text = "Score: $($Settings.Score)"
 
     $Player.Update()
 
@@ -59,20 +59,20 @@ $GameLoop.Add_Tick({
                 DisposeSprite $Sprites[$j] $Sprites
                 DisposeSprite $Projectiles[$i] $Projectiles
                 
-                [Settings]::Score++
+                $Settings.Score++
                 break
             }
         }
     }
 
-    if ($Keys["W"]){ $Player.Y-=[Settings]::EntitySpeed }
-    if ($Keys["S"]){ $Player.Y+=[Settings]::EntitySpeed }
-    if ($Keys["A"]){ $Player.X-=[Settings]::EntitySpeed }
-    if ($Keys["D"]){ $Player.X+=[Settings]::EntitySpeed }
+    if ($Keys["W"]){ $Player.Y-=$Settings.EntitySpeed }
+    if ($Keys["S"]){ $Player.Y+=$Settings.EntitySpeed }
+    if ($Keys["A"]){ $Player.X-=$Settings.EntitySpeed }
+    if ($Keys["D"]){ $Player.X+=$Settings.EntitySpeed }
 })
 
 
 Init
 
 $Window.Dispose()
-[Settings]::Assets.Keys | foreach-object{ [Settings]::Assets[$_].Dispose() }
+$Settings.Assets.Keys | foreach-object{ $Settings.Assets[$_].Dispose() }

@@ -31,9 +31,9 @@ $Window.Add_KeyUp({
             [Sprite]::new(
                 "projectile.png",
                 $Player.X+$Player.Element.Width,
-                $Player.Y+($Player.Element.Width-[Settings]::ProjectileWidth)/2,
-                [Settings]::ProjectileWidth,
-                [Settings]::ProjectileSpeed
+                $Player.Y+($Player.Element.Width-$Settings.ProjectileWidth)/2,
+                $Settings.ProjectileWidth,
+                $Settings.ProjectileSpeed
             )
         )
     }

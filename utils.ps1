@@ -15,10 +15,10 @@ function CreateTimer{
     $Sprites.Add(
         [Sprite]::new(
             "shokam.png",
-            $Window.Width-[Settings]::EntitySize,
-            (Get-Random -Minimum 0 -Maximum ($Window.Width-[Settings]::EntitySize+1)), 
-            [Settings]::EntitySize,
-            -[Settings]::EntitySpeed
+            $Window.Width-$Settings.EntitySize,
+            (Get-Random -Minimum 0 -Maximum ($Window.Width-$Settings.EntitySize+1)), 
+            $Settings.EntitySize,
+            -$Settings.EntitySpeed
         )
     )
 }
